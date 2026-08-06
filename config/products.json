@@ -1,0 +1,32 @@
+{
+  "source_feed_url": "https://www.aaartobklady.cz/favi.xml",
+  "output_file": "public/feed.xml",
+  "products": {
+    "71": {
+      "product_name": "Designové obkladačky Rosa Sulfurea na zeleném pozadí",
+      "description": "Originální designová obkladačka s botanickým motivem růže Rosa Sulfurea na zeleném pozadí. Umělecký tisk promění kuchyň, koupelnu nebo dekorativní stěnu v osobitý interiérový prvek. Výrazný květinový motiv vynikne samostatně i jako součást větší obkladové kompozice. Produkt je vyráběn na objednávku; aktuální cenu, rozměry a podmínky dodání najdete na stránce produktu.",
+      "category": "Dům a zahrada > Bydlení a doplňky > Obklady a dlažby > Dekorativní obklady",
+      "delivery_date": "35",
+      "params": {
+        "Motiv": "Růže Rosa Sulfurea",
+        "Styl": "Botanický, umělecký",
+        "Barva": "Zelená",
+        "Použití": "Dekorace interiéru"
+      }
+    },
+    "205": {
+      "product_name": "Designové obkladačky Paul Theodor van Brussel – květinové zátiší 40 × 50 cm",
+      "description": "Dekorativní obraz z designových obkladaček s reprodukcí květinového zátiší od Paula Theodora van Brussela. Kompozici tvoří 4 obkladačky o rozměru 20 × 25 cm, které po sestavení vytvářejí obraz o celkové velikosti 40 × 50 cm. Elegantní květinový motiv se hodí jako výrazný detail do kuchyně, koupelny i dalších interiérů. Produkt je vyráběn na objednávku s orientační dobou dodání 4–5 týdnů.",
+      "category": "Dům a zahrada > Bydlení a doplňky > Obklady a dlažby > Dekorativní obklady",
+      "delivery_date": "35",
+      "params": {
+        "Autor motivu": "Paul Theodor van Brussel",
+        "Motiv": "Květinové zátiší",
+        "Celkový rozměr": "40 × 50 cm",
+        "Počet obkladaček": "4",
+        "Rozměr obkladačky": "20 × 25 cm",
+        "Styl": "Klasické umění, květinový"
+      }
+    }
+  }
+}
