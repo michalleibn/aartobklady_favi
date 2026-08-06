@@ -1,0 +1,58 @@
+name: Vytvořit a publikovat FAVI feed
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "config/**"
+      - ".github/workflows/publish.yml"
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Načíst repozitář
+        uses: actions/checkout@v4
+
+      - name: Nastavit Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Vytvořit feed ze Shoptetu
+        run: python src/generate_feed.py
+
+      - name: Ověřit feed
+        run: python src/validate_feed.py public/feed.xml
+
+      - name: Nastavit GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Nahrát Pages artefakt
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Publikovat GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
