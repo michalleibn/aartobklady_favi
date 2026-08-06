@@ -10,7 +10,7 @@ from copy import deepcopy
 from pathlib import Path
 
 REQUIRED = ("ITEM_ID", "PRODUCTNAME", "DESCRIPTION", "CATEGORYTEXT", "PRICE_VAT", "URL", "IMGURL", "DELIVERY_DATE")
-ID_FIELDS = ("ITEM_ID", "PRODUCTNO", "ITEMGROUP_ID")
+ID_FIELDS = ("CODE", "ITEM_ID", "PRODUCTNO", "ITEMGROUP_ID")
 
 def text(node, tag):
     child = node.find(tag)
