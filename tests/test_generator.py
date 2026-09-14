@@ -15,7 +15,15 @@ class GeneratorTest(unittest.TestCase):
             cfg.write_text(json.dumps(config, ensure_ascii=False), encoding="utf-8")
             output = build(cfg, root / "tests/fixtures/source.xml")
             items = ET.parse(output).getroot().findall("SHOPITEM")
-            self.assertEqual([i.findtext("ITEM_ID") for i in items], ["71", "205"])
+            self.assertEqual([i.findtext("ITEM_ID") for i in items], ["71", "205", "689", "206"])
+            old_category = "Dům a zahrada > Bydlení a doplňky > Obklady a dlažby > Dekorativní obklady"
+            self.assertEqual([i.findtext("CATEGORYTEXT") for i in items],
+                             [old_category, old_category, "Stavba a rekonstrukce > Obklady", "Stavba a rekonstrukce > Obklady"])
+            for item in items:
+                self.assertEqual(len(item.findall("CATEGORYTEXT")), 1)
+            for item in items[2:]:
+                self.assertIn("keramické obklady", item.findtext("PRODUCTNAME"))
+                self.assertEqual(item.findtext("PRICE_VAT"), "3000")
             self.assertIn("Rosa Sulfurea", items[0].findtext("DESCRIPTION"))
             self.assertEqual(items[1].findtext("DELIVERY_DATE"), "35")
 
