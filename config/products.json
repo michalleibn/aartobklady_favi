@@ -27,6 +27,34 @@
         "Rozměr obkladačky": "20 × 25 cm",
         "Styl": "Klasické umění, květinový"
       }
+    },
+    "689": {
+      "product_name": "Designové keramické obklady Puget květin na bílém pozadí 20 × 30 cm",
+      "description": "Dekorativní keramické obklady s motivem pugetu květin na bílém pozadí. Designové obkladačky vytvářejí výrazný květinový prvek pro interiérovou stěnu a propojují umělecký motiv s keramickým obkladem. Světlé pozadí nechává vyniknout květinovou kompozici, která dodá prostoru osobitý charakter. Velikost motivu je 20 × 30 cm. Orientační doba dodání je 4–5 týdnů.",
+      "category": "Stavba a rekonstrukce > Obklady",
+      "delivery_date": "35",
+      "params": {
+        "Motiv": "Puget květin",
+        "Materiál": "Keramika",
+        "Typ": "Nástěnné obklady",
+        "Styl": "Umělecký, květinový",
+        "Velikost motivu": "20 × 30 cm"
+      }
+    },
+    "206": {
+      "product_name": "Designové keramické obklady Petter Ein – květiny ve váze 40 × 50 cm",
+      "description": "Dekorativní keramické obklady s uměleckým motivem Petter Ein – květiny ve váze. Kompozici tvoří 4 obkladačky o rozměru 20 × 25 cm, které po sestavení vytvářejí obraz o celkové velikosti 40 × 50 cm. Květinové zátiší propojuje klasický výtvarný motiv s keramickým obkladem a dodá interiérové stěně osobitý charakter. Orientační doba dodání je 4–5 týdnů.",
+      "category": "Stavba a rekonstrukce > Obklady",
+      "delivery_date": "35",
+      "params": {
+        "Motiv": "Květiny ve váze",
+        "Materiál": "Keramika",
+        "Typ": "Nástěnné obklady",
+        "Styl": "Umělecký, květinový",
+        "Celkový rozměr": "40 × 50 cm",
+        "Počet obkladaček": "4",
+        "Rozměr obkladačky": "20 × 25 cm"
+      }
     }
   }
 }
