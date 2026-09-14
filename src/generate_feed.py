@@ -103,7 +103,7 @@ def build(config_path, local_source=None):
     return output_path
 
 def main():
-    parser = argparse.ArgumentParser(description="Vytvoří dvouproduktový XML feed pro FAVI.cz")
+    parser = argparse.ArgumentParser(description="Vytvoří výběrový XML feed pro FAVI.cz")
     parser.add_argument("--config", default="config/products.json")
     parser.add_argument("--source-file", help="Lokální XML pouze pro testování")
     args = parser.parse_args()
