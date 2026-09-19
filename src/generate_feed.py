@@ -84,6 +84,8 @@ def build(config_path, local_source=None):
     for code, override in selected.items():
         item = deepcopy(by_code[code])
         set_text(item, "ITEM_ID", code)
+        # Keep both title fields consistent for FAVI import.
+        set_text(item, "PRODUCT", override["product_name"])
         set_text(item, "PRODUCTNAME", override["product_name"])
         set_text(item, "DESCRIPTION", override["description"])
         set_text(item, "CATEGORYTEXT", override["category"])
