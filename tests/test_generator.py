@@ -13,7 +13,12 @@ class GeneratorTest(unittest.TestCase):
             config["output_file"] = str(Path(tmp) / "feed.xml")
             cfg = Path(tmp) / "config.json"
             cfg.write_text(json.dumps(config, ensure_ascii=False), encoding="utf-8")
-            output = build(cfg, root / "tests/fixtures/source.xml")
+            # Exercise replacement of a Shoptet PRODUCT and creation when absent.
+            source = ET.parse(root / "tests/fixtures/source.xml")
+            ET.SubElement(source.getroot().find("SHOPITEM"), "PRODUCT").text = "Original Shoptet title"
+            source_path = Path(tmp) / "source.xml"
+            source.write(source_path, encoding="utf-8")
+            output = build(cfg, source_path)
             items = ET.parse(output).getroot().findall("SHOPITEM")
             self.assertEqual([i.findtext("ITEM_ID") for i in items], ["71", "205", "689", "206"])
             old_category = "Dům a zahrada > Bydlení a doplňky > Obklady a dlažby > Dekorativní obklady"
@@ -21,6 +26,10 @@ class GeneratorTest(unittest.TestCase):
                              [old_category, old_category, "Stavba a rekonstrukce > Obklady", "Stavba a rekonstrukce > Obklady"])
             for item in items:
                 self.assertEqual(len(item.findall("CATEGORYTEXT")), 1)
+                expected_title = config["products"][item.findtext("ITEM_ID")]["product_name"]
+                self.assertEqual(item.findtext("PRODUCT"), expected_title)
+                self.assertEqual(item.findtext("PRODUCTNAME"), expected_title)
+                self.assertEqual(len(item.findall("PRODUCT")), 1)
             for item in items[2:]:
                 self.assertIn("keramické obklady", item.findtext("PRODUCTNAME"))
                 self.assertEqual(item.findtext("PRICE_VAT"), "3000")
